@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <title>Dashboard</title>
+    <style>
+        :root {
+            --primColor: #dcdcdc;
+            --secoColor: #555555;
+            --cornerRad: 4px;
+        }
+
+        body {
+            background-color: var(--primColor);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        #details {
+            margin: 0px;
+        }
+
+        summary {
+            writing-mode: vertical-lr;
+            text-align: center;
+            padding: 12px 10px;
+            width: 23px;
+            height: 17px;
+            background-color: var(--primColor);
+            border: 2px solid var(--secoColor);
+            border-radius: var(--cornerRad);
+            color: var(--secoColor);
+            cursor: pointer;
+            user-select: none;
+            outline: none;
+            transition: transform 200ms ease-in-out 0s;
+        }
+
+        summary::before,
+        summary::after {
+            position: static;
+            top: 0;
+            left: 0;
+        }
+
+        summary::before {
+            content: "";
+        }
+
+        summary::after {
+            content: "III";
+            letter-spacing: -1px;
+        }
+
+        summary:hover {
+            transform: scale(1.1);
+        }
+
+        summary::marker {
+            font-size: 0;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details[open] .menu {
+            animation-name: menuAnim;
+        }
+
+        details[open] summary::before {
+            content: "X";
+        }
+
+        details[open] summary::after {
+            content: "";
+        }
+
+        .menu {
+            height: 0;
+            width: fit-content;
+            border-radius: var(--cornerRad);
+            background-color: var(--primColor);
+            box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+            margin-top: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            animation: closeMenu 300ms ease-in-out forwards;
+        }
+
+        .menu a {
+            padding: 12px 24px;
+            margin: 0 16px;
+            color: var(--secoColor);
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            text-align: center;
+            transition: filter 200ms linear 0s;
+        }
+
+        .menu a:nth-of-type(1) {
+            padding-top: 24px;
+        }
+
+        .menu a:nth-last-of-type(1) {
+            border-bottom: none;
+        }
+
+        .menu a:hover {
+            filter: brightness(200%);
+        }
+
+        details::before {
+            color: var(--secoColor);
+            position: absolute;
+            margin-left: 80px;
+            padding: 10px 10px;
+            opacity: 0.4;
+        }
+
+        details[open]::before {
+            animation: fadeMe 300ms linear forwards;
+        }
+
+        @keyframes menuAnim {
+            0% {
+                height: 0;
+            }
+
+            100% {
+                height: 270px;
+            }
+        }
+
+        @keyframes fadeMe {
+            0% {
+                opacity: 0.4;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* #dash{float: right;} */
+        #details {
+            float: left;
+        }
+
+        #heading_dash {
+            padding-top: 5px;
+            font-size: 30px;
+            margin-left: 60px;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        #basic_details {
+            margin-left: 60px;
+            font-size: 40px;
+            font-family: 'Ubuntu', sans-serif;
+            color: #28a745;
+
+        }
+
+        #basic_details_percentage {
+            font-size: 20px;
+            color: grey;
+        }
+
+        #basic_details_name_verified {
+            font-size: 10px;
+        }
+
+        #payment,#aadhar,#education,#skill {
+            margin-left: 60px;
+            /* border: 1px solid black; */
+            margin-right: 60px;
+            border-radius: 4px;
+            padding: 4px;
+            padding-left: 40px;
+            /* background-color:#17a2b8; */
+
+        }
+
+        #payment_head,#aadhar_head,#education_head,#skill_head{
+            color: #17a2b8;
+            font-size: 25px;
+        }
+
+        #payment_text,#aadhar_text,#education_text,#skill_text{
+            padding: 5px;
+            font-size: 15px;
+            width: 200px;
+        }
+
+        #payment_btn,#aadhar_btn,#education_btn,#skill_btn {
+            float: right;
+        }
+        #payment_btn,#aadhar_btn,#education_btn,#skill_btn{
+           padding: 10px;
+           width: 200px;
+           border-radius: 5px;
+           background-color: #ffc107;;
+        }
+        #payment_btn:hover,#aadhar_btn:hover,#education_btn:hover,#skill_btn:hover{
+            background-color:#e83e8c;
+        }
+    </style>
+
+</head>
+</body>
+<details id="details">
+    <summary></summary>
+    <nav class="menu">
+        <a href="#link">Home</a>
+        <a href="#link">Services</a>
+        <a href="#link">Contact</a>
+        <a href="#link">About</a>
+        <a href="#link">LogOut</a>
+    </nav>
+</details>
+<div id="heading_dash">Dashboard</div>
+<hr>
+<div id="basic_details">
+    <span id="basic_details_name">Abhinav Kumar Gaur</span>
+    <span id="basic_details_percentage">&nbsp;&nbsp;&nbsp;&nbsp;10% profile completed !!</span>
+</div>
+<br>
+
+<div id="payment">
+    <div id="payment_head">PAYment Verification
+        <hr>
+    </div>
+        <span id="payment_text">Complete Your Payment Now !!</span>
+        <span id="payment_button"><button id="payment_btn" onclick="payment()">&nbsp;&nbsp;&nbsp;&nbsp;Pay
+                Now&nbsp;&nbsp;&nbsp;&nbsp;</button></span>
+</div>
+<br>
+<div id="aadhar">
+    <div id="aadhar_head">Aadhar/PAN Verification
+        <hr>
+    </div>
+        <span id="aadhar_text">Verify your Aadhar and Pan now !!</span>
+        <span id="aadhar_button"><button id="aadhar_btn" onclick="aadhar()">&nbsp;&nbsp;&nbsp;&nbsp;Verify
+                Now&nbsp;&nbsp;&nbsp;&nbsp;</button></span>
+</div>
+<br>
+<div id="education">
+    <div id="education_head">Add Education
+        <hr>
+    </div>
+        <span id="education_text">Complete your education details !!</span>
+        <span id="education_button"><button id="education_btn" onclick="education()">&nbsp;&nbsp;&nbsp;&nbsp;Add
+                Education&nbsp;&nbsp;&nbsp;&nbsp;</button></span>
+</div>
+<br>
+
+<div id="skill">
+    <div id="skill_head">Add Skill 
+        <hr>
+    </div>
+        <span id="skill_text">Add more skills Now !!</span>
+        <span id="skill_button"><button id="skill_btn" onclick="skill()">&nbsp;&nbsp;&nbsp;&nbsp;Add
+                skill&nbsp;&nbsp;&nbsp;&nbsp;</button></span>
+</div>
+<script>
+    var sum=0;
+    var percent=document.getElementById('basic_details_percentage');
+    function payment(){
+          sum+=25;
+          percent.innerText=" "+sum+"% profile completed !!";
+          document.getElementById('payment_text').innerText="Completed";
+          document.getElementById("payment_btn").style.visibility = "hidden";
+
+
+    }
+    function aadhar(){
+        sum+=25;
+          percent.innerText=" "+sum+"% profile completed !!";
+          document.getElementById('aadhar_text').innerText="Completed";
+          document.getElementById("aadhar_btn").style.visibility = "hidden";
+
+        
+    }
+    function education(){
+        sum+=25;
+          percent.innerText=" "+sum+"% profile completed !!";
+          document.getElementById('education_text').innerText="Completed";
+          document.getElementById("education_btn").style.visibility = "hidden";
+
+        
+    }
+    function skill(){
+        sum+=25;
+        percent.innerText=" "+sum+"% profile completed !!";
+        document.getElementById('skill_text').innerText="Completed";
+        document.getElementById('skill_btn').style.visibility = "hidden";
+    }
+</script>
+</body>
+
+</html>
