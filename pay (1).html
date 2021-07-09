@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Theme</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: white;
+      color: black;
+    }
+
+    /* Style the header */
+    .header {
+      background-color: #57bc90;
+      padding: 5px;
+      text-align: center;
+      width: 100%;
+      color: white;
+      align-items: center;
+
+    }
+
+    /* Style the top navigation bar */
+    .topnav {
+      overflow: hidden;
+      background-color: #015249;
+      width: 100%;
+    }
+
+    /* Style the topnav links */
+    .topnav a,
+    button {
+      float: left;
+      display: block;
+      background-color: #015249;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      border: 1px solid #015249;
+    }
+
+    #steptext {
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    /* Change color on hover */
+    .topnav a:hover,
+    button:hover {
+      background-color: #57bc90;
+      ;
+      color: white;
+
+    }
+
+    .topnav {
+      width: 100%;
+    }
+
+    .content {
+      margin: 10px;
+    }
+
+    /* Style the footer */
+    .footer {
+      background-color: #57bc90;
+      text-align: center;
+      position: absolute;
+      margin: 0px;
+      width: 100%;
+      color: white;
+    }
+
+    /* different colors for main content */
+    h3 {
+      color: black;
+    }
+
+
+
+
+
+
+
+    /* steps */
+
+    /* progressbar */
+    /* Global CSS, you probably don't need that */
+
+    .clearfix:after {
+      clear: both;
+      content: "";
+      /* display: block; */
+      display: flex;
+      height: 0;
+    }
+
+    .container {
+      font-family: 'Lato', sans-serif;
+
+      background-color: #57bc90;
+      /* display:flex; */
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      display: inline-flex;
+    }
+
+    .wrapper {
+
+      display: flex;
+      padding-left: 120px;
+      vertical-align: middle;
+      /* width: 1200px; */
+    }
+
+    .nav {
+      margin-top: 40px;
+      display: flex;
+    }
+
+    a,
+    a:active {
+      color: #333;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #999;
+    }
+
+    /* Breadcrups CSS */
+
+    .arrow-steps .step {
+      display: flex;
+      font-size: 14px;
+      text-align: center;
+      color: white;
+      background-color: #57bc90;
+      cursor: default;
+      margin: 0 3px;
+      padding: 10px 10px 10px 30px;
+      min-width: 200px;
+      float: left;
+      position: relative;
+      background-color: #015249;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      transition: background-color 0.2s ease;
+    }
+
+    .arrow-steps .step:after,
+    .arrow-steps .step:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -17px;
+      width: 0;
+      height: 0;
+      border-top: 19px solid transparent;
+      border-bottom: 17px solid transparent;
+      border-left: 17px solid #015249;
+      z-index: 2;
+      transition: border-color 0.2s ease;
+      display: flex;
+    }
+
+    .arrow-steps .step:before {
+      right: auto;
+      left: 0;
+      border-left: 17px solid #57bc90;
+      z-index: 0;
+      display: flex;
+    }
+
+    .arrow-steps .step:first-child:before {
+      border: none;
+    }
+
+    .arrow-steps .step:first-child {
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      display: flex;
+    }
+
+    .arrow-steps .step span {
+      position: relative;
+    }
+
+    .arrow-steps .step span:before {
+      opacity: 0;
+      content: "✔";
+      position: absolute;
+      display: flex;
+      color: aquamarine;
+      top: -2px;
+      left: -20px;
+    }
+
+    .arrow-steps .step.done span:before {
+      opacity: 1;
+      -webkit-transition: opacity 0.3s ease 0.5s;
+      -moz-transition: opacity 0.3s ease 0.5s;
+      -ms-transition: opacity 0.3s ease 0.5s;
+      transition: opacity 0.3s ease 0.5s;
+    }
+
+    /* 
+        .arrow-steps .step.current {
+            background-color: #04d9ff;
+            color: #dfffff;
+            /* border: 1px solid; */
+    /* } */
+
+    /* .arrow-steps .step.current:after {
+            border-left: 17px solid #04d9ff;
+        } */
+    #activate_check {
+      float: right;
+    }
+
+    a {
+      text-align: center;
+    }
+
+    .pull_right {
+      width: 200px;
+    }
+
+    #table_outer {
+      width: 200px;
+      height: 370px;
+      /* background-color: yellow; */
+      margin-top: 10px;
+    }
+
+    button {
+      width: 200px;
+      height: 63px;
+      padding-top: 20px;
+
+    }
+
+
+    #lower_part {
+      display: flex;
+    }
+
+
+    #display_main {
+      margin-left: 4px;
+      height: 440px;
+      width: 900px;
+      background-color: teal;
+    }
+
+    #right_menu {
+      width: 140px;
+      height: 370px;
+      background-color: tomato;
+      margin-left: 20px;
+    }
+
+    #sidemenubtn {
+      margin-top: 2px;
+      /* border-radius: 2px; */
+      margin-left: 2px;
+    }
+
+    #main_upper {
+      border: 1px solid black;
+      height: 300px;
+      width: 900px;
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="container">
+      <div class="wrapper">
+        <div class="arrow-steps clearfix">
+          <!-- <div class="step current"> <span>Follow these steps for easy start</span> </div> -->
+          <div class="step "> <span> Complete Your Profile</span> </div>
+          <div class="step"> <span>Technical Test</span> </div>
+          <div class="step"> <span> Communication Test</span> </div>
+          <div class="step"> <span>Internships</span> </div>
+          <div class="step"> <span>Apply for jobs</span> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topnav">
+    <a href="#"><img src="https://img.icons8.com/office/30/26e07f/wallet.png" /> </a>
+    <button id="activate_check">NotActive</button>
+    <!-- <a href="#">Link</a> -->
+    <p id="steptext">Follow Above Steps For Easy Start!!! </p>
+  </div>
+
+  <div id="lower_part">
+    <div id="table_outer">
+
+      <button id="sidemenubtn" onclick="profile_btn()">Profile</button> <br>
+      <button id="sidemenubtn">Test</button><br>
+      <button id="sidemenubtn">Edit</button><br>
+      <button id="sidemenubtn">Logout</button>
+    </div>
+    <div id="display_main">
+      <div id="main_upper">Profile</div>
+      <div id="main_lower">payment</div>
+    </div>
+    <div id="right_menu">
+    </div>
+    <div>
+      
+    </div>
+
+  </div>
+  <br>
+  <div class="footer">
+    <p>Footer</p>
+  </div>
+
+</body>
+
+</html>

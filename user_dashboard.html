@@ -7,9 +7,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Indie+Flower&display=swap"
+        rel="stylesheet">
     <title>Dashboard</title>
     <style>
+        /* * {box-sizing: border-box;} */
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            /* background-color: #ffffff; */
+        }
+
+        .header {
+            overflow: hidden;
+            background-color: #04d9ff;
+            padding: 2px 10px;
+            padding-bottom: 10px;
+            height: 40px;
+        }
+
+        .header a {
+            float: left;
+            color: #ffffff;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 25px;
+            border-radius: 4px;
+        }
+
+        .header a.logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .header a:hover {
+            background-color: #eeeeee;
+            color: #04d9ff;
+        }
+
+        .header a.active {
+            background-color: #dfffff;
+            color: #04d9ff;
+        }
+
+        .header-right {
+            float: right;
+        }
+
+        @media screen and (max-width: 500px) {
+            .header a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .header-right {
+                float: none;
+            }
+        }
+
+        /* mycss */
         :root {
             --primColor: #dcdcdc;
             --secoColor: #555555;
@@ -17,13 +83,15 @@
         }
 
         body {
-            background-color: var(--primColor);
+            /* background-color: var(--primColor); */
+            background-color: white;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 20px;
         }
 
         #details {
-            margin: 0px;
+            margin: 2px;
+            margin-left: 15px;
         }
 
         summary {
@@ -32,7 +100,7 @@
             padding: 12px 10px;
             width: 23px;
             height: 17px;
-            background-color: var(--primColor);
+            /* background-color: var(--primColor); */
             border: 2px solid var(--secoColor);
             border-radius: var(--cornerRad);
             color: var(--secoColor);
@@ -136,7 +204,7 @@
             }
 
             100% {
-                height: 270px;
+                height: 280px;
             }
         }
 
@@ -159,27 +227,41 @@
             padding-top: 5px;
             font-size: 30px;
             margin-left: 60px;
-            font-family: 'Ubuntu', sans-serif;
+            /* font-family: 'Dela Gothic One', cursive; */
+            /* font-family: 'Indie Flower', cursive; */
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-weight: bold;
+            /* color:#dfffff; */
+            /* color: black; */
+            color:#9cdbdb;
+
         }
 
         #basic_details {
             margin-left: 60px;
-            font-size: 40px;
-            font-family: 'Ubuntu', sans-serif;
-            color: #28a745;
+            font-size: 50px;
+            /* color: #28a745; */
+             color: #95c8d8;
+            font-family: 'Dela Gothic One', cursive;
+            /* font-weight: bold; */
 
         }
 
         #basic_details_percentage {
             font-size: 20px;
-            color: grey;
+            color:#9cdbdb;
         }
 
         #basic_details_name_verified {
             font-size: 10px;
         }
 
-        #payment,#aadhar,#education,#skill {
+        #payment,
+        #aadhar,
+        #education,
+        #skill,
+        #tech{
             margin-left: 60px;
             /* border: 1px solid black; */
             margin-right: 60px;
@@ -190,119 +272,276 @@
 
         }
 
-        #payment_head,#aadhar_head,#education_head,#skill_head{
-            color: #17a2b8;
-            font-size: 25px;
+        #payment_head,
+        #aadhar_head,
+        #education_head,
+        #skill_head,
+        #tech_head
+         {
+            font-family: Arial, Helvetica, sans-serif;
+            /* color: #28a745; */
+            color:#04d9ff;
+            font-size: 18px;
+            font-weight: 600;
         }
 
-        #payment_text,#aadhar_text,#education_text,#skill_text{
+        #payment_text,
+        #aadhar_text,
+        #education_text,
+        #skill_text,
+        #tech_text {
             padding: 5px;
             font-size: 15px;
             width: 200px;
+            color: grey;
         }
 
-        #payment_btn,#aadhar_btn,#education_btn,#skill_btn {
+        #payment_btn,
+        #aadhar_btn,
+        #education_btn,
+        #skill_btn,
+        #tech_btn {
             float: right;
         }
-        #payment_btn,#aadhar_btn,#education_btn,#skill_btn{
-           padding: 10px;
-           width: 200px;
-           border-radius: 5px;
-           background-color: #ffc107;;
+
+        #payment_btn,
+        #aadhar_btn,
+        #education_btn,
+        #skill_btn,
+        #tech_btn {
+            padding: 10px;
+            width: 200px;
+            border-radius: 5px;
+            background-color: #dfffff;
+            color: #04d9ff;
+            text-decoration: solid;
+            border: 1px solid #dfffff;
+            font-weight: bold;
+            ;
         }
-        #payment_btn:hover,#aadhar_btn:hover,#education_btn:hover,#skill_btn:hover{
-            background-color:#e83e8c;
+
+        #payment_btn:hover,
+        #aadhar_btn:hover,
+        #education_btn:hover,
+        #skill_btn:hover,
+        #tech_btn:hover{
+            background-color: #eeeeee;
+            color: #04d9ff;
         }
+        #header_bg{
+            background-color: #eeeeee;
+        }
+
+        /* body{
+            background-color:#085dcb ;
+        } */
+        .meter {
+            margin-left: 180px;
+            margin-right: 180px;
+            height: 20px;
+            position: relative;
+            background: #555;
+            border-radius: 25px;
+            padding: 10px;
+            box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .meter>span {
+            display: block;
+            height: 100%;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            background-color: rgb(43, 194, 83);
+            background-image: linear-gradient(center bottom,
+                    rgb(43, 194, 83) 37%,
+                    rgb(84, 240, 84) 69%);
+            box-shadow:
+                inset 0 2px 9px rgba(255, 255, 255, 0.3),
+                inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .meter>span:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(-45deg,
+                    rgba(255, 255, 255, .2) 25%,
+                    transparent 25%,
+                    transparent 50%,
+                    rgba(255, 255, 255, .2) 50%,
+                    rgba(255, 255, 255, .2) 75%,
+                    transparent 75%,
+                    transparent);
+            z-index: 1;
+            background-size: 50px 50px;
+            animation: move 2s linear infinite;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            overflow: hidden;
+        }
+        body{
+            background-color: white;
+        }
+
+        .section_head{
+            margin-left: 100px;
+            color:#d79922;
+        }
+
     </style>
 
 </head>
 </body>
+<div id="header_bg">
+<div class="header">
+    <a href="#default" class="logo">CompanyLogo</a>
+    <div class="header-right">
+        <a class="active" href="#home">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+</div>
+
+
 <details id="details">
     <summary></summary>
     <nav class="menu">
-        <a href="#link">Home</a>
-        <a href="#link">Services</a>
-        <a href="#link">Contact</a>
-        <a href="#link">About</a>
+        <a href="#link">Status</a>
+        <a href="#link">Courses</a>
+        <a href="#link">Tests</a>
+        <a href="#link">Profile</a>
         <a href="#link">LogOut</a>
     </nav>
 </details>
-<div id="heading_dash">Dashboard</div>
-<hr>
+
+
+<div id="heading_dash">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User Dashboard</div>
 <div id="basic_details">
-    <span id="basic_details_name">Abhinav Kumar Gaur</span>
+    <span id="basic_details_name">&nbsp;&nbsp;&nbsp;&nbsp;User-Name </span>
     <span id="basic_details_percentage">&nbsp;&nbsp;&nbsp;&nbsp;10% profile completed !!</span>
+  
+</div>
+<div class="meter">
+    <span  id="progress_bar"style="width: 10%"></span>
+</div>
+<hr>
+</div>
+<br>
+<div class="section_head">
+    <h3>Basic Profile</h3>
+</div>
+<div id="payment">
+    <span id="payment_head">Payment
+        <hr>
+    </span>
+    <span id="payment_text">Complete Your Payment Now !!</span>
+    <span id="payment_button"><button id="payment_btn" onclick="payment()">&nbsp;&nbsp;&nbsp;&nbsp;Pay
+            Now&nbsp;&nbsp;&nbsp;&nbsp;</button></span>
 </div>
 <br>
 
-<div id="payment">
-    <div id="payment_head">PAYment Verification
-        <hr>
-    </div>
-        <span id="payment_text">Complete Your Payment Now !!</span>
-        <span id="payment_button"><button id="payment_btn" onclick="payment()">&nbsp;&nbsp;&nbsp;&nbsp;Pay
-                Now&nbsp;&nbsp;&nbsp;&nbsp;</button></span>
-</div>
-<br>
+
+
 <div id="aadhar">
     <div id="aadhar_head">Aadhar/PAN Verification
         <hr>
     </div>
-        <span id="aadhar_text">Verify your Aadhar and Pan now !!</span>
-        <span id="aadhar_button"><button id="aadhar_btn" onclick="aadhar()">&nbsp;&nbsp;&nbsp;&nbsp;Verify
-                Now&nbsp;&nbsp;&nbsp;&nbsp;</button></span>
+    <span id="aadhar_text">Verify your Aadhar and Pan now !!</span>
+    <span id="aadhar_button"><button id="aadhar_btn" onclick="aadhar()">&nbsp;&nbsp;&nbsp;&nbsp;Verify
+            Now&nbsp;&nbsp;&nbsp;&nbsp;</button></span>
 </div>
 <br>
+
+
+
 <div id="education">
     <div id="education_head">Add Education
         <hr>
     </div>
-        <span id="education_text">Complete your education details !!</span>
-        <span id="education_button"><button id="education_btn" onclick="education()">&nbsp;&nbsp;&nbsp;&nbsp;Add
-                Education&nbsp;&nbsp;&nbsp;&nbsp;</button></span>
+    <span id="education_text">Complete your education details !!</span>
+    <span id="education_button"><button id="education_btn" onclick="education()">&nbsp;&nbsp;&nbsp;&nbsp;Add
+            Education&nbsp;&nbsp;&nbsp;&nbsp;</button></span>
 </div>
 <br>
 
+
+
+
 <div id="skill">
-    <div id="skill_head">Add Skill 
+    <div id="skill_head">Add Skills
         <hr>
     </div>
-        <span id="skill_text">Add more skills Now !!</span>
-        <span id="skill_button"><button id="skill_btn" onclick="skill()">&nbsp;&nbsp;&nbsp;&nbsp;Add
-                skill&nbsp;&nbsp;&nbsp;&nbsp;</button></span>
+    <span id="skill_text">Add more skills Now !!</span>
+    <span id="skill_button"><button id="skill_btn" onclick="skill()">&nbsp;&nbsp;&nbsp;&nbsp;Add
+            skills&nbsp;&nbsp;&nbsp;&nbsp;</button></span>
 </div>
+<br><br>
+
+
+<!-- technical skill -->
+<div class="section_head">
+    <h3>Technical Skills</h3>
+</div>
+
+<br>
+
+<div id="tech">
+    <div id="tech_head">Complete Your Technical Tests
+        <hr>
+    </div>
+    <span id="tech_text">Get Technically Verified.</span>
+    <span id="tech_button"><button id="tech_btn" >&nbsp;&nbsp;&nbsp;&nbsp;Take Test&nbsp;&nbsp;&nbsp;&nbsp;</button></span>
+</div>
+<br>
+
+<div class="section_head">
+    <h3>Communication Skills</h3>
+</div>
+
 <script>
-    var sum=0;
-    var percent=document.getElementById('basic_details_percentage');
-    function payment(){
-          sum+=25;
-          percent.innerText=" "+sum+"% profile completed !!";
-          document.getElementById('payment_text').innerText="Completed";
-          document.getElementById("payment_btn").style.visibility = "hidden";
-
+    var sum = 0;
+    var percent = document.getElementById('basic_details_percentage');
+    var bar = document.getElementById('progress_bar');
+    function payment() {
+        sum += 25;
+        percent.innerText = " " + sum + "% profile completed !!";
+        document.getElementById('payment_text').innerText = "Completed";
+        document.getElementById("payment_btn").style.visibility = "hidden";
+        bar.style.width = sum + "%";
 
     }
-    function aadhar(){
-        sum+=25;
-          percent.innerText=" "+sum+"% profile completed !!";
-          document.getElementById('aadhar_text').innerText="Completed";
-          document.getElementById("aadhar_btn").style.visibility = "hidden";
+    function aadhar() {
+        sum += 25;
+        percent.innerText = " " + sum + "% profile completed !!";
+        document.getElementById('aadhar_text').innerText = "Completed";
+        document.getElementById("aadhar_btn").style.visibility = "hidden";
+        bar.style.width = sum + "%";
 
-        
     }
-    function education(){
-        sum+=25;
-          percent.innerText=" "+sum+"% profile completed !!";
-          document.getElementById('education_text').innerText="Completed";
-          document.getElementById("education_btn").style.visibility = "hidden";
+    function education() {
+        sum += 25;
+        percent.innerText = " " + sum + "% profile completed !!";
+        document.getElementById('education_text').innerText = "Completed";
+        document.getElementById("education_btn").style.visibility = "hidden";
+        bar.style.width = sum + "%";
 
-        
     }
-    function skill(){
-        sum+=25;
-        percent.innerText=" "+sum+"% profile completed !!";
-        document.getElementById('skill_text').innerText="Completed";
+    function skill() {
+        sum += 25;
+        percent.innerText = " " + sum + "% profile completed !!";
+        document.getElementById('skill_text').innerText = "Completed";
         document.getElementById('skill_btn').style.visibility = "hidden";
+        bar.style.width = sum + "%";
+
     }
 </script>
 </body>

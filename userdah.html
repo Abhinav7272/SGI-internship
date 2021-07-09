@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       table{
+           width: 100%;
+           border-collapse: collapse;
+       }
+       tr,td{
+           border: 1px solid black;
+           border-collapse: collapse;
+       }
+       #header_row{
+           height: 20vh;
+       }
+       #menu_row{
+           height: 70vh;
+
+       }
+       #lower_row{
+           height: 10vh;
+       }
+       #main_area{
+           width: 160vh;
+       }
+    </style>
+</head>
+
+
+
+<frameset rows="20%,70%,10%" border="1" frameborder="1">
+    <frame name="header" src="bar.html">
+        <frameset cols="15%,70%,15%" border="1" frameborder="1">
+            <frame name="leftmenu"  >
+            <frame name="middlemenu" src="bar.html">
+            <frame name="rightmenu" src="user_dashboard.html">
+         </frameset>
+     <frame name="footer" src="bar.html">    
+</frameset>
+
+
+
+<!-- <body>
+    <table>
+        <tr id="header_row">
+            <td colspan="10">header</td>
+        </tr>
+        <tr id="menu_row">
+            <td></td>
+            <td id="main_area">
+                <div id="">
+                    hello
+                </div>
+            </td>
+            <td>sidemenu</td>
+        </tr>
+        <tr id="lower_row">
+            <td colspan="10">lower</td>
+        </tr>
+    </table> 
+</body> -->  
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reefral Page</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #ffffff;
+      }
+
+      .header {
+        overflow: hidden;
+        background-color: #04d9ff;
+        padding: 20px 10px;
+      }
+
+      .header a {
+        float: left;
+        color: #ffffff;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 25px;
+        border-radius: 4px;
+      }
+
+      .header a.logo {
+        font-size: 25px;
+        font-weight: bold;
+      }
+
+      .header a:hover {
+        background-color: #eeeeee;
+        color: #04d9ff;
+      }
+
+      .header a.active {
+        background-color: #dfffff;
+        color: #04d9ff;
+      }
+
+      .header-right {
+        float: right;
+      }
+      #content{
+        margin: 50px;
+      }
+
+      @media screen and (max-width: 500px) {
+        .header a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+
+        .header-right {
+          float: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <a href="#default" class="logo">CompanyLogo</a>
+      <div class="header-right">
+        <a class="active" href="#home">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
+    <div id=content>
+        <h2>Referal page</h2>
+    <br><br><br>
+    <p>No money!!Enter your referals below</p>
+<input type='text' id='idea'>
+<input type="button" id="add" value="Add New">
+<script>document.getElementById("add").onclick  = function() {
+
+    var node = document.createElement("Li");
+    var text = document.getElementById("idea").value; 
+    var textnode=document.createTextNode(text);
+    node.appendChild(textnode);
+    document.getElementById("list").appendChild(node);
+}
+</script>
+<ul id='list'></ul>
+<br><br><br><br>
+<form method="POST" action="">  
+       <input type="submit"/>
+    </div>
+
+    
+  </body>
+</html>
